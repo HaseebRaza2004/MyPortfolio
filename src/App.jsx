@@ -128,7 +128,63 @@ const App = () => {
         </div>
       </section>
 
-      // Skills Section
+      {/* About Me Section */}
+      <section id="about" className="pb-32 px-6 lg:px-20 relative">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold text-white mb-12 text-center"
+          >
+            About <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Me</span>
+          </motion.h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Profile Picture */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative flex justify-center"
+            >
+              <div className="relative w-72 h-72 rounded-2xl overflow-hidden">
+                <img
+                  src="/profile.jpg" // Replace with your profile picture
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 backdrop-blur-sm" />
+              </div>
+            </motion.div>
+
+            {/* Bio */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              <h3 className="text-2xl font-bold text-white">
+                Hi, I'm [Your Name]
+              </h3>
+              <p className="text-gray-300 leading-relaxed">
+                I'm a passionate web developer with expertise in building modern, responsive, and user-friendly web applications.
+                With a strong foundation in <span className="text-cyan-400">React</span>, <span className="text-blue-400">Next.js</span>,
+                and <span className="text-green-400">Node.js</span>, I love turning ideas into reality through clean and efficient code.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good cup of coffee.
+              </p>
+              <button className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 rounded-full text-white font-semibold hover:scale-105 transition-transform">
+                Download Resume
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
       <section id="skills" className="py-32 px-6 lg:px-20 relative">
         <div className="max-w-7xl mx-auto">
           <motion.h2
@@ -166,6 +222,68 @@ const App = () => {
                   <skill.icon className={`text-5xl mb-4 text-white group-hover:scale-110 transition-transform`} />
                   <h3 className="text-xl font-semibold text-white">{skill.name}</h3>
                   <p className="text-sm text-gray-400 mt-2">Expert</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-32 px-6 lg:px-20 relative bg-gray-800/50">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold text-white mb-16 text-center"
+          >
+            Specialized <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Services</span>
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Web Development",
+                description: "Crafting high-performance web applications with React/Next.js, Tailwind CSS, and modern architecture patterns.",
+                icon: "💻",
+                color: "from-cyan-500 to-blue-600",
+                delay: 0.1
+              },
+              {
+                title: "Mobile Development",
+                description: "Building cross-platform mobile apps with React Native, Expo, and Firebase for seamless user experiences.",
+                icon: "📱",
+                color: "from-purple-500 to-indigo-600",
+                delay: 0.3
+              },
+              {
+                title: "Backend Development",
+                description: "Developing scalable REST APIs & microservices using Node.js, Express, MongoDB, and Redis.",
+                icon: "⚙️",
+                color: "from-amber-500 to-orange-500",
+                delay: 0.5
+              }
+            ].map((service, i) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: service.delay, duration: 0.6 }}
+                viewport={{ once: true }}
+                className="relative group h-full"
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity`} />
+
+                <div className="relative bg-white/5 rounded-2xl backdrop-blur-xl border border-white/10 p-8 hover:bg-white/10 transition-all h-full flex flex-col">
+                  <div className="text-5xl mb-6 animate-float">{service.icon}</div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                  <p className="text-gray-300 flex-grow">{service.description}</p>
+                  <div className="mt-6">
+                    <span className="inline-block px-4 py-2 bg-white/10 text-cyan-400 rounded-full text-sm font-medium">
+                      Learn More →
+                    </span>
+                  </div>
                 </div>
               </motion.div>
             ))}
