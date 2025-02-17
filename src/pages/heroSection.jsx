@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiChevronRight, FiFacebook, FiInstagram } from 'react-icons/fi';
 import { TypeAnimation } from 'react-type-animation';
 
-const HeroSection = () => {
+const HeroSection = ({ scrollToProjects }) => {
 
     return (
         <section className="h-screen flex items-center px-6 lg:px-20 relative">
@@ -39,17 +39,47 @@ const HeroSection = () => {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 rounded-full text-white font-semibold flex items-center"
+                            onClick={scrollToProjects}
+                            className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 rounded-full text-white font-semibold flex items-center cursor-pointer"
                         >
                             View Work <FiChevronRight className="ml-2" />
                         </motion.button>
 
                         <div className="flex space-x-4 items-center">
-                            <FiGithub className="text-2xl text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
-                            <FiLinkedin className="text-2xl text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
-                            <FiMail className="text-2xl text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
-                            <FiFacebook className="text-2xl text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
-                            <FiInstagram className="text-2xl text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
+                            <a href="https://github.com/HaseebRaza2004"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FiGithub className="text-2xl text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/muhammad-haseeb-raza-6a6b0333b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FiLinkedin className="text-2xl text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
+                            </a>
+
+                            <a href="mailto:haseebraza2004@gmail.com?subject=Inquiry%20from%20My%20Website&body=Hello,%20I'd%20like%20to..."
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FiMail className="text-2xl text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
+                            </a>
+
+                            <a href="https://www.facebook.com/share/1EbmQwEbpn/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FiFacebook className="text-2xl text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
+                            </a>
+
+                            <a href="https://www.instagram.com/haseeb_raza01?igsh=MTg0Z2xjM3c3cmprNA=="
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <FiInstagram className="text-2xl text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
+                            </a>
                         </div>
                     </div>
                 </motion.div>
@@ -62,7 +92,7 @@ const HeroSection = () => {
                 >
                     <video
                         className="h-full w-full object-cover rounded-2xl"
-                        src="/1111394629-preview.mp4" // Replace with your actual video file name
+                        src="/1111394629-preview.mp4"
                         autoPlay
                         loop
                         muted

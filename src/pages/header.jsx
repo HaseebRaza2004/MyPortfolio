@@ -8,7 +8,7 @@ const Header = () => {
                 animate={{ opacity: 1, x: 0 }}
             >
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    DevPortfolio<span className="text-blue-400">.</span>
+                   MHR DevPortfolio<span className="text-blue-400">.</span>
                 </h1>
             </motion.div>
 

@@ -7,8 +7,12 @@ import ContactSection from './pages/contact';
 import AboutMe from './pages/about';
 import HeroSection from './pages/heroSection';
 import Header from './pages/header';
+import { useRef } from 'react';
+import WhatsAppButton from './pages/WhatsAppBtn';
 
 const App = () => {
+
+  const projectsRef = useRef(null);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-900 to-slate-900 overflow-hidden">
@@ -24,7 +28,9 @@ const App = () => {
       <Header />
 
       {/* Hero Section */}
-      <HeroSection />
+      <HeroSection
+        scrollToProjects={() => projectsRef.current.scrollIntoView({ behavior: 'smooth' })}
+      />
 
       {/* About Me Section */}
       <AboutMe />
@@ -36,10 +42,15 @@ const App = () => {
       <ServiceSection />
 
       {/* Projects Section */}
-      <ProjectsSection />
+      <div ref={projectsRef}>
+        <ProjectsSection />
+      </div>
 
       {/* Contact Section */}
       <ContactSection />
+
+      {/* WhatsApp Floating Button */}
+      <WhatsAppButton />
 
       {/* Footer */}
       <Footer />
