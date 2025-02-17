@@ -3,6 +3,17 @@ import { TypeAnimation } from 'react-type-animation';
 
 const AboutMe = () => {
 
+    const handleDownload = () => {
+        // 1. Create a link element dynamically
+        const link = document.createElement('a');
+        link.href = '/resume.pdf'; // Path to your PDF in the public directory
+        link.download = 'haseeb_raza_resume.pdf'; // Filename for the downloaded file
+        link.style.display = 'none'; // Hide the link
+        document.body.appendChild(link); // Add to the DOM
+        link.click(); // Simulate click
+        document.body.removeChild(link); // Remove the link
+    };
+
     return (
         <section id="about" className="pb-32 px-6 lg:px-20 relative">
             <div className="max-w-7xl mx-auto">
@@ -25,7 +36,7 @@ const AboutMe = () => {
                     >
                         <div className="relative w-72 h-72 rounded-2xl overflow-hidden">
                             <img
-                                src="/WhatsApp Image 2025-01-30 at 12.34.05 PM.jpeg" // Replace with your profile picture
+                                src="/images/WhatsApp Image 2025-01-30 at 12.34.05 PM.jpeg" // Replace with your profile picture
                                 alt="Profile"
                                 className="w-full h-full object-cover"
                             />
@@ -64,7 +75,9 @@ const AboutMe = () => {
                         <p className="text-gray-300 leading-relaxed">
                             When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good cup of tea.
                         </p>
-                        <button className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 rounded-full text-white font-semibold hover:scale-105 transition-transform">
+                        <button
+                            onClick={handleDownload}
+                            className="bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-3 rounded-full text-white font-semibold hover:scale-105 transition-transform cursor-pointer">
                             Download Resume
                         </button>
                     </motion.div>
