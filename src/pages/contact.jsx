@@ -14,6 +14,7 @@ const schema = yup.object().shape({
 
 const ContactSection = () => {
 
+    const [alert, setAlert] = useState({ message: '', type: '' });
     const form = useRef();
     const {
         register,
@@ -23,9 +24,6 @@ const ContactSection = () => {
     } = useForm({
         resolver: yupResolver(schema),
     });
-
-    // Alert state
-    const [alert, setAlert] = useState({ message: '', type: '' });
 
     const onSubmit = (data) => {
         emailjs

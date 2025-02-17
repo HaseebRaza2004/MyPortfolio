@@ -1,4 +1,3 @@
-
 import { FiGithub, FiLinkedin, FiInstagram, FiMail, FiFacebook } from "react-icons/fi";
 
 const Footer = () => {

@@ -102,7 +102,6 @@ const ProjectsSection = () => {
                 </Swiper>
             </div>
         </section>
-
     );
 };
 
