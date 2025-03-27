@@ -5,7 +5,7 @@ import { TypeAnimation } from 'react-type-animation';
 const HeroSection = ({ scrollToProjects }) => {
 
     return (
-        <section className="h-screen flex items-center px-6 lg:px-20 relative">
+        <section className="h-screen flex items-center px-6 lg:px-20 relative my-20 md:my-10 lg:my-0 xl:my-0">
             <div className="grid lg:grid-cols-2 items-center gap-12 w-full">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -67,7 +67,7 @@ const HeroSection = ({ scrollToProjects }) => {
                                 <FiMail className="text-2xl text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
                             </a>
 
-                            <a href="https://www.facebook.com/share/1EbmQwEbpn/"
+                            {/* <a href="https://www.facebook.com/share/1EbmQwEbpn/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -79,7 +79,7 @@ const HeroSection = ({ scrollToProjects }) => {
                                 rel="noopener noreferrer"
                             >
                                 <FiInstagram className="text-2xl text-gray-400 hover:text-cyan-400 cursor-pointer transition-colors" />
-                            </a>
+                            </a> */}
                         </div>
                     </div>
                 </motion.div>

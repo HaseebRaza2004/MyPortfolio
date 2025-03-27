@@ -58,7 +58,7 @@ const ContactSection = () => {
 
     return (
         <section id="contact" className="py-32 px-6 lg:px-20 relative">
-            <div className="max-w-4xl mx-auto backdrop-blur-lg bg-white/5 rounded-3xl border border-white/10 p-12">
+            <div className="max-w-4xl mx-auto backdrop-blur-lg bg-white/5 rounded-3xl border border-white/10 p-6 md:p-12 lg:p-12 xl:p-12">
                 <motion.h2
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
